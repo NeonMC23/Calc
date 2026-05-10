@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calc</title>
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">C</div>
+          <div class="title">
+            <div class="name">Calc</div>
+            <div class="subtitle" id="modeLabel">Basic mode</div>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="chip" id="angleChip" type="button" aria-label="Toggle radians/degrees">
+            RAD
+          </button>
+          <button class="chip" id="toggleModeBtn" type="button" aria-label="Toggle mode">
+            Pro
+          </button>
+          <button class="iconbtn" id="settingsBtn" type="button" aria-label="Settings">
+            <span aria-hidden="true">⚙</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel">
+          <div class="display">
+            <div class="expr-row">
+              <input
+                id="exprInput"
+                class="expr"
+                inputmode="decimal"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="Enter an expression…"
+                aria-label="Expression"
+              />
+              <button class="iconbtn" id="clearBtn" type="button" aria-label="Backspace">
+                <span aria-hidden="true">⌫</span>
+              </button>
+            </div>
+            <div class="result-row">
+              <div class="hint" id="hint"></div>
+              <div class="result" id="result">0</div>
+            </div>
+          </div>
+
+          <div class="keypad" id="keypad"></div>
+        </section>
+
+        <aside class="side" id="sidePanel" aria-label="Panneau Pro">
+          <div class="card">
+            <div class="card-title">Functions</div>
+            <div class="chips" id="fnChips"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">History</div>
+            <div class="history" id="history"></div>
+            <div class="history-actions">
+              <button class="btn" id="clearHistoryBtn" type="button">Clear</button>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <dialog class="modal" id="settingsModal" aria-label="Settings">
+      <form method="dialog" class="modal-inner">
+        <div class="modal-head">
+          <div class="modal-title">Settings</div>
+          <button class="iconbtn" value="cancel" aria-label="Close" type="submit">
+            <span aria-hidden="true">✕</span>
+          </button>
+        </div>
+
+        <div class="fieldset">
+          <label class="label" for="themeSelect">Theme</label>
+          <select id="themeSelect" class="select">
+            <option value="system">System</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+
+        <div class="fieldset">
+          <label class="label" for="accentSelect">Accent</label>
+          <select id="accentSelect" class="select">
+            <option value="indigo">Indigo</option>
+            <option value="cyan">Cyan</option>
+            <option value="rose">Rose</option>
+            <option value="amber">Amber</option>
+          </select>
+        </div>
+
+        <div class="fieldset">
+          <label class="label" for="angleSelect">Angle unit (trig)</label>
+          <select id="angleSelect" class="select">
+            <option value="rad">Radians</option>
+            <option value="deg">Degrees</option>
+          </select>
+        </div>
+
+        <div class="fieldset">
+          <div class="label">Keyboard shortcuts</div>
+          <div class="shortcuts">
+            <div class="shortcuts-head">
+              <div class="shortcuts-hint" id="shortcutCaptureHint"></div>
+              <div class="shortcuts-actions">
+                <button class="btn" id="resetShortcutsBtn" type="button">Reset</button>
+                <button class="btn" id="exportConfigBtn" type="button">Export</button>
+                <button class="btn" id="importConfigBtn" type="button">Import</button>
+                <input id="importConfigFile" type="file" accept="application/json" hidden />
+              </div>
+            </div>
+            <div class="shortcuts-list" id="shortcutsList"></div>
+          </div>
+        </div>
+
+        <div class="modal-foot">
+          <button class="btn primary" id="saveSettingsBtn" type="submit" value="default">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
