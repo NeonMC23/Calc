@@ -20,10 +20,16 @@ python start.py
 
 Then open the printed URL (default: `http://127.0.0.1:5173`).
 
+## Control Hub Compatibility (port.json)
+
+This project reads the port from `port.json` at startup.
+
+- If `port.json` is missing or corrupted, it is recreated with a default port.
+- You can override the port with `python start.py --port 5001` (this also updates `port.json`).
+
 ## Notes
 
 - The server-side evaluator only allows a strict subset of expressions (operators, parentheses, constants, and whitelisted functions).
 - The frontend accepts `^` for power (converted to `**` server-side).
 - `Ans` reuses the last result.
 - The `%` button applies a simple percentage (`*0.01`).
-

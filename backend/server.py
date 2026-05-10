@@ -26,6 +26,14 @@ def _read_json(handler: SimpleHTTPRequestHandler) -> dict:
 class CalcHandler(SimpleHTTPRequestHandler):
     server_version = "CalcHTTP/1.0"
 
+    def do_GET(self) -> None:  # noqa: N802
+        parsed = urlparse(self.path)
+        if parsed.path == "/port.json":
+            port = int(self.server.server_address[1])
+            self._send_json(HTTPStatus.OK, {"port": port})
+            return
+        super().do_GET()
+
     def _send_json(self, status: int, payload: dict) -> None:
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
