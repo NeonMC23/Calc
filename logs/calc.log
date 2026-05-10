@@ -1,0 +1,10 @@
+2026-05-10 16:49:59 [control-hub] Launching: C:\Users\piotr\AppData\Local\Programs\Python\Python312\python.exe \\Nas-lseau\kids\02. Pierre\Documents\Code\Project\Calc\start.py (port=5000)
+2026-05-10 16:49:59 [stdout] Calc started: http://127.0.0.1:5000
+2026-05-10 16:49:59 [stdout] Ctrl+C to stop.
+2026-05-10 16:50:44 [control-hub] Stopping...
+2026-05-10 16:50:44 [control-hub] Process exited with code 1
+2026-05-10 16:50:46 [control-hub] Launching: C:\Users\piotr\AppData\Local\Programs\Python\Python312\python.exe \\Nas-lseau\kids\02. Pierre\Documents\Code\Project\Calc\start.py (port=5000)
+2026-05-10 16:50:46 [stdout] Calc started: http://127.0.0.1:5000
+2026-05-10 16:50:46 [stdout] Ctrl+C to stop.
+2026-05-10 16:51:11 [control-hub] Stopping...
+2026-05-10 16:51:11 [control-hub] Process exited with code 1
